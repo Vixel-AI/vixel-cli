@@ -1,0 +1,63 @@
+{
+  "version": "0.5.5",
+  "artifacts": [
+    {
+      "target": "darwin-arm64",
+      "filename": "vixel-0.5.5-darwin-arm64.tar.gz",
+      "sha256": "6104ee5ded82d0283959008f50feb4dd2bb1669fbbe84adf864b8c503e9529db",
+      "byteSize": 22374818,
+      "runtimeRequired": false,
+      "executionVerified": true,
+      "url": "https://github.com/Vixel-AI/vixel-cli/releases/download/v0.5.5/vixel-0.5.5-darwin-arm64.tar.gz"
+    },
+    {
+      "target": "darwin-x64",
+      "filename": "vixel-0.5.5-darwin-x64.tar.gz",
+      "sha256": "39f1618c91591b8e7bfd55a45b9b2c665e1d05603ac486ba484dd17aff9c447d",
+      "byteSize": 24709180,
+      "runtimeRequired": false,
+      "executionVerified": false,
+      "url": "https://github.com/Vixel-AI/vixel-cli/releases/download/v0.5.5/vixel-0.5.5-darwin-x64.tar.gz"
+    },
+    {
+      "target": "linux-arm64",
+      "filename": "vixel-0.5.5-linux-arm64.tar.gz",
+      "sha256": "30c9246c3dee1d599dcdd726ff2eb7498b829f0df2d89fba0e195e749713c793",
+      "byteSize": 37994073,
+      "runtimeRequired": false,
+      "executionVerified": false,
+      "url": "https://github.com/Vixel-AI/vixel-cli/releases/download/v0.5.5/vixel-0.5.5-linux-arm64.tar.gz"
+    },
+    {
+      "target": "linux-x64",
+      "filename": "vixel-0.5.5-linux-x64.tar.gz",
+      "sha256": "72fff5c4d9f6335f4944daa5536573c154a5244493debcd60d7c9ea122798187",
+      "byteSize": 38012558,
+      "runtimeRequired": false,
+      "executionVerified": false,
+      "url": "https://github.com/Vixel-AI/vixel-cli/releases/download/v0.5.5/vixel-0.5.5-linux-x64.tar.gz"
+    },
+    {
+      "target": "windows-x64",
+      "filename": "vixel-0.5.5-windows-x64.zip",
+      "sha256": "67d41dd7b657725dbdf638b19db9868de7c634a471a1bf21da839f3c43c12792",
+      "byteSize": 41098208,
+      "runtimeRequired": false,
+      "executionVerified": false,
+      "url": "https://github.com/Vixel-AI/vixel-cli/releases/download/v0.5.5/vixel-0.5.5-windows-x64.zip"
+    }
+  ],
+  "releaseChannel": "alpha",
+  "platformDefault": "https://drama.vixelai.com",
+  "downloadBaseUrl": "https://github.com/Vixel-AI/vixel-cli/releases/download/v0.5.5",
+  "installers": [
+    {
+      "filename": "install.sh",
+      "url": "https://github.com/Vixel-AI/vixel-cli/releases/download/v0.5.5/install.sh"
+    },
+    {
+      "filename": "install.ps1",
+      "url": "https://github.com/Vixel-AI/vixel-cli/releases/download/v0.5.5/install.ps1"
+    }
+  ]
+}
