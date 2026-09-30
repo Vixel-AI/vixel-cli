@@ -4,14 +4,14 @@ Create with Vixel from your AI agent. Standalone client **0.5.5 (Alpha)**,
 with the platform Skill and public documentation included. No Node.js required.
 
 **Give your agent this URL:**
-https://raw.githubusercontent.com/Vixel-AI/vixel-cli/main/agent.md
+https://cli.vixelai.com/vixelCLI-setup.md
 
 Default platform: https://drama.vixelai.com. For local testing, tell your agent
 to use **http://localhost:5000**. Downloads and platform authentication are
 separate. This repository does not contain Vixel's application/server source.
 
 - [Download 0.5.5](https://github.com/Vixel-AI/vixel-cli/releases/tag/v0.5.5)
-- [Agent setup](agent.md)
+- [Agent setup](https://cli.vixelai.com/vixelCLI-setup.md)
 - [CLI reference](CLI.md)
 - [Platform Skill](skills/vixel-platform/SKILL.md)
 - [Current release and hashes](current.json)
