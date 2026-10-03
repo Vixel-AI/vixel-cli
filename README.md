@@ -1,12 +1,11 @@
 # Vixel CLI
 
-### Make films with your AI agent.
+![Vixel — Make films with your AI agent. Original brand illustration of a lighthouse keeper returning a lost star to the sky.](assets/vixel-hero.png)
 
-Develop a story, create character images and shot videos, and refine your cut
-with Codex or another coding agent. Your project and media stay in Vixel, where
-you can review them in the browser and continue working with Director.
+Develop stories, characters and shot videos with Codex or another coding agent.
+Review your project and media in Vixel, and continue with Director.
 
-[Get started](#get-started) · [Try a prompt](#try-a-prompt) · [CLI reference](CLI.md) · [Download 0.5.7](https://github.com/Vixel-AI/vixel-cli/releases/tag/v0.5.7) · [Vixel](https://drama.vixelai.com)
+[Get started](#get-started) · [Watch a film](#made-with-vixel) · [Try a prompt](#try-a-prompt) · [CLI reference](CLI.md) · [Download 0.5.7](https://github.com/Vixel-AI/vixel-cli/releases/tag/v0.5.7)
 
 ## Get started
 
@@ -24,6 +23,20 @@ No source checkout, Node.js, npm, Python or Bun is required. You need an agent
 with terminal, file and network access. Browser login requires the CLI and
 browser to run on the same computer. For a remote or chat-only environment,
 see [MCP connections](https://drama.vixelai.com/creator/mcp).
+
+## Made with Vixel
+
+**Why Is the Ocean Blue?** · A 40-second animated film by the Vixel team.
+
+<table>
+  <tr>
+    <td width="33%"><a href="https://www.vixelai.com/case-studies/why-is-the-ocean-blue"><img src="https://www.vixelai.com/case-studies/why-is-the-ocean-blue/scene-1.jpg" alt="A curious blue water drop holds a glass beside the ocean." width="280"></a></td>
+    <td width="33%"><a href="https://www.vixelai.com/case-studies/why-is-the-ocean-blue"><img src="https://www.vixelai.com/case-studies/why-is-the-ocean-blue/scene-2.jpg" alt="A smiling sun and colorful characters gather on the beach." width="280"></a></td>
+    <td width="33%"><a href="https://www.vixelai.com/case-studies/why-is-the-ocean-blue"><img src="https://www.vixelai.com/case-studies/why-is-the-ocean-blue/scene-3.jpg" alt="Two water-drop characters share a moment by the sea." width="280"></a></td>
+  </tr>
+</table>
+
+Frames from the finished film. [Watch the film →](https://www.vixelai.com/case-studies/why-is-the-ocean-blue)
 
 ## Try a prompt
 
