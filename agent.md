@@ -3,7 +3,7 @@
 This is Vixel's public client distribution, not the platform or an OAuth issuer.
 Stable entry: https://cli.vixelai.com/vixelCLI-setup.md
 Read https://cli.vixelai.com/current.json for the current release. This guide
-is pinned to 0.5.5. If the manifest recommends another version, reload
+is pinned to 0.5.7. If the manifest recommends another version, reload
 both documents before installing; do not combine different releases.
 Installers and archives remain on the versioned GitHub Release.
 
@@ -29,14 +29,14 @@ On macOS/Linux, download the release's install.sh, read it, and run it with both
 origins. Replace PLATFORM_ORIGIN below with the selected platform:
 
 ```sh
-curl -fsSL 'https://github.com/Vixel-AI/vixel-cli/releases/download/v0.5.5/install.sh' -o vixel-install.sh
-sh vixel-install.sh --base-url 'PLATFORM_ORIGIN' --download-base-url 'https://github.com/Vixel-AI/vixel-cli/releases/download/v0.5.5' --prefix "$PWD/.vixel-client"
+curl -fsSL 'https://github.com/Vixel-AI/vixel-cli/releases/download/v0.5.7/install.sh' -o vixel-install.sh
+sh vixel-install.sh --base-url 'PLATFORM_ORIGIN' --download-base-url 'https://github.com/Vixel-AI/vixel-cli/releases/download/v0.5.7' --prefix "$PWD/.vixel-client"
 export VIXEL_CONFIG="$PWD/.vixel-session/session.json"
 ./.vixel-client/bin/vixel setup --directory "$PWD" --base-url 'PLATFORM_ORIGIN' --no-browser
 ```
 
 Windows x64: download/read install.ps1 from the same release, run it with
--BaseUrl PLATFORM_ORIGIN -DownloadBaseUrl 'https://github.com/Vixel-AI/vixel-cli/releases/download/v0.5.5' -Prefix "$PWD\.vixel-client",
+-BaseUrl PLATFORM_ORIGIN -DownloadBaseUrl 'https://github.com/Vixel-AI/vixel-cli/releases/download/v0.5.7' -Prefix "$PWD\.vixel-client",
 set VIXEL_CONFIG to this task's new session.json path, then use
 .vixel-client\bin\vixel.exe for setup and other commands. Do not bypass OS
 security or execution policies. Windows ARM64 is not provided.
@@ -48,12 +48,40 @@ Read the installed .agents/skills/vixel-platform/SKILL.md and its README.
 Use the actual executable path throughout; installation does not modify PATH.
 Different existing binaries/Skill files are preserved for explicit review.
 
+## Updating an existing installation
+
+First inspect the installed version and current platform/session configuration.
+Keep the existing executable prefix and VIXEL_CONFIG selection; do not create a
+new empty session or copy credentials from another task. Read this release's
+notes, then run its installer against the same prefix with --upgrade (Windows:
+-Upgrade). The installer replaces only the binary, preserving login and Skill
+files. Run the new executable's version and auth status before signing in again.
+
+Review the installed Skill and README separately. Setup intentionally refuses
+different files. Compare them with the user's installed release and the new
+release's public skills/vixel-platform files; preserve a backup and any custom
+instructions before applying a reviewed update. Do not bypass SKILL_CONFLICT by
+deleting the folder. Then rerun setup with --no-login using the same working
+folder and configuration, read the updated Skill, and run doctor. If the prior
+login is still valid, keep it; otherwise use the recovery steps below.
+
 ## Browser login and visible results
 
 Keep the one OAuth callback process alive. Open its exact URL in Codex's right
 browser panel, reuse that tab and verify it loaded. Follow the available host
 browser tools. If the request is queued, report queued, not visible success.
 The user may need to enter a password, MFA or consent in the browser.
+Use a long-running terminal session; retain its session ID and poll it while the
+user signs in. Do not cancel it or apply a short execution timeout after showing
+the URL. Browser and CLI must run on the same computer; --no-browser does not
+make a remote container's loopback address reachable from the user's browser.
+The CLI prints its waiting limit. On timeout or connection refused, do not
+refresh the old callback. Using the same executable and VIXEL_CONFIG, check
+auth status first (the login may already have completed), then auth refresh for
+an expired session. If still disconnected, end the old pending attempt, start
+auth login --base-url PLATFORM_ORIGIN --no-browser and open only its new URL.
+Never paste code/state or tokens into chat. A host that cannot keep local
+execution alive should use its supported remote MCP connector instead.
 After login, run doctor and inspect data.ready and each check; then follow the
 installed Skill's operation-to-surface mapping. Navigate the same tab to the
 requested Work, refresh after CLI writes/canonical readback and terminal Jobs,

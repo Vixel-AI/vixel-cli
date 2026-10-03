@@ -160,6 +160,18 @@ callback alive. The user reviews the grant; do not request credentials or copy
 browser secrets. `auth refresh` rotates expired access; old deployments fail
 closed. Keep browser and CLI on the same origin.
 
+Keep login in a long-running terminal session and retain/poll its session ID.
+Do not kill it after displaying the URL or mistake a tool yield for failure.
+CLI and browser must share the same computer; `--no-browser` does not enable
+remote device authorization. Follow the client's printed waiting limit.
+On timeout or a refused callback, do not refresh the old page or reinstall.
+Using the same executable and `VIXEL_CONFIG`, check `auth status` first: an old
+callback can fail after a successful login. Refresh an expired session and
+recheck. If still disconnected, stop the old pending attempt and start one new
+login; open its new URL while preserving that session. Never paste code/state
+or tokens into chat. Native MCP login belongs to the host client; use its
+connection controls rather than creating a separate CLI login to repair it.
+
 Run `vixel docs` for exact JSON inputs. Prefer `generation quote`
 then `generation submit` with the exact `quoteId`, user-approved `maxCredits`
 and stable key. Connecting alone does not authorize spending. Default to
