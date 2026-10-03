@@ -128,6 +128,24 @@ manual opening on the same computer. Device authorization is not implemented.
 Tokens stay in `~/.config/vixel/session.json` with 0600 permissions. Override
 `VIXEL_CONFIG` to isolate environments. No token is printed in JSON output.
 
+Browser approval waits up to 15 minutes after the link is ready; setup time
+does not consume that wait. Both `auth login` and `setup` accept
+`--login-timeout SECONDS` (1–1800), separate from the API request timeout.
+Keep the terminal running while signing in. Agents must retain the long-running
+session ID and poll it, not cancel it when the tool yields or the browser opens.
+The CLI reports waiting progress and gives recovery instructions on timeout or
+Ctrl+C/termination. It cannot keep listening after a forced process kill or make
+a remote container's loopback address reachable from a different computer.
+
+If the callback page shows connection refused, do not refresh it or reinstall.
+With the same executable, platform and `VIXEL_CONFIG`, check `auth status`:
+refreshing an old callback can fail even after login succeeded. For an expired
+session, run `auth refresh` and recheck. If still disconnected, stop any old
+pending attempt and run `auth login --base-url "<TARGET_ORIGIN>" --no-browser`.
+Open only the new URL and keep that session running. Do not copy code/state into
+chat. A failed or cancelled attempt preserves the previously saved session.
+No success is reported until account verification and local saving complete.
+
 Use `auth status`, `auth refresh` and `auth logout`. Refresh is explicit and
 rotates credentials; do not refresh one config concurrently. Failed revocation
 retains the config for retry. You can also disconnect through `/creator/mcp`.

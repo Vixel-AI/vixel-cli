@@ -1,6 +1,6 @@
 param([Parameter(Mandatory=$true)][string]$BaseUrl, [string]$Prefix = "$env:LOCALAPPDATA\Vixel", [string]$DownloadBaseUrl = '', [switch]$Upgrade)
 $ErrorActionPreference = 'Stop'
-$Version = '0.5.5'
+$Version = '0.5.7'
 $Origin = [Uri]$BaseUrl
 if (($Origin.Scheme -ne 'https' -and -not ($Origin.Scheme -eq 'http' -and $Origin.Host -in @('localhost','127.0.0.1'))) -or $Origin.UserInfo -or $Origin.Query -or $Origin.Fragment -or $Origin.AbsolutePath -ne '/') { throw 'Use HTTPS or a loopback platform origin.' }
 if ([System.Runtime.InteropServices.RuntimeInformation]::OSArchitecture -ne 'X64') { throw 'This release supports Windows x64 only.' }

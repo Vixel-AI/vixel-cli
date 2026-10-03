@@ -1,7 +1,7 @@
 #!/bin/sh
 # Install the standalone Vixel client. No Node, npm, Python, Bun or sudo required.
 set -eu
-version='0.5.5'
+version='0.5.7'
 origin=''
 download_base=''
 prefix=''
